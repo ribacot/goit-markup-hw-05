@@ -577,3 +577,6 @@ img {
 .link-examples:hover .overlay {
 	transform: translateY(0);
 }
+.link-examples:focus .overlay {
+	transform: translateY(0);
+}
