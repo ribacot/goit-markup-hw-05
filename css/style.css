@@ -272,6 +272,67 @@ img {
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
+.hero-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(46, 47, 66, 0.4);
+	transition-property: transform, transform-origin, opacity, visibility;
+
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--timing-funcion);
+}
+
+.hero-overlay.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	transform: scale(0.5);
+	transform-origin: 0 0;
+}
+
+.hero-modal {
+	position: absolute;
+	width: 408px;
+	height: 576px;
+	top: 50%;
+	left: 50%;
+
+	background-color: #fcfcfc;
+	border-radius: 4px;
+	box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+		0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+
+	transform: translate(-50%, -50%);
+}
+
+.hero-modal-close {
+	position: absolute;
+	display: flex;
+	padding: 8px;
+	margin-left: auto;
+	top: 24px;
+	right: 24px;
+
+	color: #000000;
+	background-color: var(--accent);
+	border: 1px solid #0000001a;
+	border-radius: 50%;
+}
+
+.hero-modal-close:hover {
+	color: var(--white);
+}
+
+.hero-modal-close-icon {
+	width: 8px;
+	height: 8px;
+	fill: currentColor;
+}
+
 /* features */
 
 .section-features {
@@ -547,18 +608,20 @@ img {
 	border: var(--accent) solid 1px;
 	border-top: none;
 }
+
 .thumb-exemples {
 	position: relative;
 	overflow: hidden;
 }
-.overlay {
+
+.overlay-exemples {
 	position: absolute;
+	top: 0;
+	left: 0;
 
 	width: 100%;
 	height: 100%;
 	padding-top: 40px;
-	top: 0;
-	left: 0;
 
 	background-color: var(--primari-brend);
 
@@ -567,6 +630,7 @@ img {
 	transition-duration: var(--transition-time);
 	transition-timing-function: var(--timing-funcion);
 }
+
 .text-overlay {
 	width: 296px;
 	margin: 0 auto;
@@ -574,9 +638,11 @@ img {
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 }
-.link-examples:hover .overlay {
+
+.link-examples:hover .overlay-exemples {
 	transform: translateY(0);
 }
-.link-examples:focus .overlay {
+
+.link-examples:focus .overlay-exemples {
 	transform: translateY(0);
 }
