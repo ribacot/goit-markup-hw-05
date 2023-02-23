@@ -316,6 +316,7 @@ img {
 	margin-left: auto;
 	top: 24px;
 	right: 24px;
+	transform: translate(12px, -12px);
 
 	color: #000000;
 	background-color: var(--accent);
