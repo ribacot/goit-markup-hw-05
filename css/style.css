@@ -85,9 +85,9 @@ body {
 	display: block;
 	text-decoration: none;
 
-	transition-property: color;
+	/* transition-property: color;
 	transition-duration: var(--transition-time);
-	transition-timing-function: var(--timing-funcion);
+	transition-timing-function: var(--timing-funcion); */
 }
 
 .list {
@@ -198,11 +198,20 @@ img {
 	content: "";
 	width: 100%;
 	height: 4px;
-	bottom: 0;
+	bottom: -1px;
 	left: 0;
 
 	background-color: var(--primari-brend);
 	border-radius: 2px;
+}
+.head-nav-link.vizit{
+	color: var(--pressed-state);
+}
+.head .link{
+	transition-property: color;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--timing-funcion);
+
 }
 
 /* contact */
@@ -273,26 +282,24 @@ img {
 }
 /* modal */
 
-.hero-overlay {
+.backdrop {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(46, 47, 66, 0.4);
-	transition-property: transform, transform-origin, opacity, visibility;
+	opacity: 1;
+	transition-property: opacity, visibility;
 
 	transition-duration: var(--transition-time);
 	transition-timing-function: var(--timing-funcion);
 }
 
-.hero-overlay.is-hidden {
+.backdrop.is-hidden {
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
-
-	transform: scale(0.5);
-	transform-origin: 0 0;
 }
 
 .hero-modal {
@@ -307,7 +314,15 @@ img {
 	box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2), 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
 		0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) ;
+	transition-property: transform,opacity;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--timing-funcion);
+
+}
+.backdrop.is-hidden .hero-modal {
+	transform: translate(-200%,-50%) scale(0.2); 
+	opacity: 0;
 }
 
 .hero-modal-close {
@@ -576,15 +591,19 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 
-	transition-property: box-shadov;
-	transition-duration: var(--transition-time);
-	transition-timing-function: var(--timing-funcion);
 }
 
 .portfolio-examples > .item {
 	flex-basis: calc(100%-2 * var(--margin-gap) / 3);
 	margin-right: var(--margin-gap);
 	margin-bottom: 48px;
+}
+
+.link-examples{
+	transition-property: box-shadov;
+	transition-duration: var(--transition-time);
+	transition-timing-function: var(--timing-funcion);
+
 }
 
 .link-examples:hover,
