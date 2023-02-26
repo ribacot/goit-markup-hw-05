@@ -659,10 +659,8 @@ img {
 	letter-spacing: 0.02em;
 }
 
-.link-examples:hover .overlay-exemples {
+.link-examples:hover .overlay-exemples,
+.link-examples:focus .overlay-exemples  {
 	transform: translateY(0);
 }
 
-.link-examples:focus .overlay-exemples {
-	transform: translateY(0);
-}
